@@ -63,3 +63,22 @@ if __name__== '__main__':
 
     print(zad5(numbers))
     
+r = 1
+x0 = 0.5
+
+def xn(n,r,x0):
+    if n <= 0:
+        return r * x0 * (1 - x0)
+    x = xn(n - 1, r, x0)
+    return r * x * (1 - x)
+
+x = []
+rr = []
+while r <= 4:
+    x.append(xn(100,r,x0))
+    rr.append(r)
+    r += 0.0001
+
+plt.plot(x)
+plt.show()
+
